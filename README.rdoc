@@ -1,0 +1,4 @@
+== Install
+
+* # add a secret key
+echo "Indie88::Application.config.secret_key_base = '" `rake secret` "'" >> config/initializers/secret_token.rb
