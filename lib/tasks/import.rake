@@ -4,10 +4,8 @@ URL_FORMAT = "/BB0728CC-D37B-46C1-A230-4DCA02826ED3_29F2216D-E18F-437F-998D-7D8E
 
 
 def each_day
-  start_date = Time.new(2013,9,7) # Time.now
+  start_date = Time.now
   end_date = Time.new(2013,9,3)  #Time.now - 1.month
-
-
 
   date = start_date
   begin
@@ -42,8 +40,8 @@ task :import => :environment do
       artist = artist(song_params["songartist"])
       params = song_params.merge(id: id)
       params.delete('timestamp')
-      song = artist.songs.where(id:id).first_or_create!
-      song.update_attributes params
+      song = Song.find_or_create_by(id:id)
+      song.update_attributes params.merge(artist:artist)
     end
   end
 end
