@@ -1,0 +1,10 @@
+show.js.coffee
+<p>{{name}}</p>
+
+{{view Ember.Select
+  content=femLevels
+  optionValuePath="content.level"
+  optionLabelPath="content.title"
+  value=fem_level }}
+
+<button {{action 'save'}}>Save</button>

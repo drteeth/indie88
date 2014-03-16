@@ -1,9 +1,5 @@
 <h1>Artist</h1>
 <p><%= @artist.name %></p>
-<p>Female fronted?</p>
-<p><%= check_box_tag :derp, @artist.is_female_fronted %></p>
-<p>Has female member?</p>
-<p><%= check_box_tag :herp, @artist.has_female_member %></p>
 
 <ul>
 <% @artist.songs.each do |song| %>

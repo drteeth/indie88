@@ -1,5 +1,4 @@
-# For more information see: http://emberjs.com/guides/routing/
-
-Indie88.Router.map ()->
-  # @resource('posts')
-
+Indie88.Router.map ->
+  @resource 'artists', {path: '/artists'}, ->
+    @route 'index', path: '/'
+    @route 'show', path: '/:artist_id'

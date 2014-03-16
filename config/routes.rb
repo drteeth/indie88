@@ -1,6 +1,7 @@
 Indie88::Application.routes.draw do
-  resources :songs
-  resources :artists do
-    resources :songs, only: [:new]
+  namespace :api, defaults: {format: 'json'} do
+    resources :artists
   end
+
+  root :to => 'application#index'
 end
