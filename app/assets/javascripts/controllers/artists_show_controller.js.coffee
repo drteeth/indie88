@@ -1,4 +1,5 @@
 Indie88.ArtistsShowController = Ember.ObjectController.extend
+  needs: ['artists']
 
   femLevels: [
     {level:0, title:'None'}
@@ -8,6 +9,23 @@ Indie88.ArtistsShowController = Ember.ObjectController.extend
   ]
 
   artists: Ember.computed.alias 'controllers.artists'
+
+  next: (->
+    artists = @get('artists')
+    current = artists.indexOf @get('model')
+    len = artists.get('length')
+    next = (current + 1) % len
+    artists.objectAt(next)
+  ).property('artists', 'model')
+
+  prev: (->
+    artists = @get('artists')
+    current = artists.indexOf @get('model')
+    len = artists.get('length')
+    prev = (current - 1) % len
+    artists.objectAt(prev)
+  ).property('artists', 'model')
+
   actions:
     save: ->
       @get('model').save();

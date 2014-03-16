@@ -13,3 +13,7 @@ show.js.coffee
 <button
   {{bind-attr class="isDirty:visible:hidden"}}
   {{action 'save'}}>Save</button>
+
+{{#link-to 'artists.show' prev}}<<{{/link-to}}
+{{#link-to 'artists.index' }}Back to artists{{/link-to}}
+{{#link-to 'artists.show' next}}>>{{/link-to}}
