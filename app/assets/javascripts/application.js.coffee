@@ -1,6 +1,7 @@
 #= require jquery
 #= require handlebars
 #= require ember
+#= require d3/d3
 #= require ember-data
 #= require_self
 #= require indie88
