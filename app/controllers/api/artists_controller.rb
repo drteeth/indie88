@@ -2,12 +2,12 @@ class Api::ArtistsController < ApplicationController
   respond_to :json
 
   def index
-    artists = Artist.all.limit(10)#.includes(:songs)
+    artists = Artist.order(:name)
     respond_with artists
   end
 
   def show
-    artist = Artist.find(params[:id])#.includes(:songs)
+    artist = Artist.find params[:id]
     respond_with artist
   end
 

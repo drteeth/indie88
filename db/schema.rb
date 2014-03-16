@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20140316015144) do
     t.integer  "fem_level",  default: 0, null: false
   end
 
+  add_index "artists", ["name"], name: "index_artists_on_name", using: :btree
+
   create_table "songs", force: true do |t|
     t.string   "songuuid"
     t.string   "streamuuid"
