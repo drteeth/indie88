@@ -7,4 +7,8 @@ show.js.coffee
   optionLabelPath="content.title"
   value=fem_level }}
 
-<button {{action 'save'}}>Save</button>
+<br>
+
+<button
+  {{bind-attr class="isDirty:visible:hidden"}}
+  {{action 'save'}}>Save</button>
