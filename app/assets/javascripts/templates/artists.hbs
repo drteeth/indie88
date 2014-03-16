@@ -1,13 +1,6 @@
 artists.hbs
 
 <hr>
-
 {{outlet}}
-
 <hr>
 
-<ul>
-{{#each artist in model}}
-  <li>{{#link-to 'artists.show' artist}}{{artist.name}}{{/link-to}}</li>
-{{/each}}
-</ul>

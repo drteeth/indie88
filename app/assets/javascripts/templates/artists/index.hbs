@@ -1,0 +1,5 @@
+<ul>
+{{#each artist in artists}}
+  <li>{{#link-to 'artists.show' artist}}{{artist.name}}{{/link-to}}</li>
+{{/each}}
+</ul>

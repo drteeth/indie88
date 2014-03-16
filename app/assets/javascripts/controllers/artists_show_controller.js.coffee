@@ -7,6 +7,7 @@ Indie88.ArtistsShowController = Ember.ObjectController.extend
     {level:3, title:'All Female'}
   ]
 
+  artists: Ember.computed.alias 'controllers.artists'
   actions:
     save: ->
       @get('model').save();
