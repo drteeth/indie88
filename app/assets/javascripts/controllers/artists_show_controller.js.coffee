@@ -5,7 +5,8 @@ Indie88.ArtistsShowController = Ember.ObjectController.extend
     {level:0, title:'None'}
     {level:1, title:'Backing Member'}
     {level:2, title:'Female Fronted'}
-    {level:3, title:'All Female'}
+    {level:3, title:'Shared'}
+    {level:4, title:'All Female'}
   ]
 
   artists: Ember.computed.alias 'controllers.artists'
