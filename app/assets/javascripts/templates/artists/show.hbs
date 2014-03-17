@@ -1,5 +1,5 @@
 show.js.coffee
-<p>{{name}}</p>
+<p><a {{bind-attr href="google"}} target="_blank">{{name}}</a></p>
 
 {{view Ember.Select
   prompt="Fem-level?"
@@ -8,12 +8,10 @@ show.js.coffee
   optionLabelPath="content.title"
   value=fem_level }}
 
-<br>
-
 <button
   {{bind-attr class="isDirty:visible:hidden"}}
   {{action 'save'}}>Save</button>
 
-{{#link-to 'artists.show' prev}}<<{{/link-to}}
-{{#link-to 'artists.index' }}Back to artists{{/link-to}}
-{{#link-to 'artists.show' next}}>>{{/link-to}}
+<p>{{#link-to 'artists.show' prev}}<<{{/link-to}}</p>
+<p>{{#link-to 'artists.index' }}artists{{/link-to}}</p>
+<p>{{#link-to 'artists.show' next}}>>{{/link-to}}</p>

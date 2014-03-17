@@ -26,6 +26,10 @@ Indie88.ArtistsShowController = Ember.ObjectController.extend
     artists.objectAt(prev)
   ).property('artists', 'model')
 
+  google: (->
+    "https://www.google.ca/search?q=" + @get('name')
+  ).property('name')
+
   actions:
     save: ->
       @get('model').save();
