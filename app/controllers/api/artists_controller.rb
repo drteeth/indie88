@@ -22,6 +22,9 @@ class Api::ArtistsController < ApplicationController
     SQL
     stats = ActiveRecord::Base.connection.select_all(sql)
 
+    # TODO use rail-y syntax
+    # Song.includes(:artist).where('artists.fem_level is not null').references(:artists).group(:fem_level).count
+
     render json: stats
   end
 
