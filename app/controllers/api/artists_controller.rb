@@ -11,6 +11,23 @@ class Api::ArtistsController < ApplicationController
     respond_with artist
   end
 
+  def stats
+    labels = {
+      nil => 'Unknown',
+      0 => 'None',
+      1 => 'Backing',
+      2 => 'Fronted',
+      3 => 'All'
+    }
+    stats = Artist.where('fem_level is not null').group_by(&:fem_level).map do |k,v|
+      {
+        label: labels[k],
+        value: v.length
+      }
+    end
+    render json: stats
+  end
+
   def create
     artist = Artist.new artist_params
     artist.save
