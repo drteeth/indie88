@@ -12,19 +12,16 @@ class Api::ArtistsController < ApplicationController
   end
 
   def stats
-    labels = {
-      nil => 'Unknown',
-      0 => 'None',
-      1 => 'Backing',
-      2 => 'Fronted',
-      3 => 'All'
-    }
-    stats = Artist.where('fem_level is not null').group_by(&:fem_level).map do |k,v|
-      {
-        label: labels[k],
-        value: v.length
-      }
-    end
+    sql = <<-SQL
+      select fem_level, count(fem_level)
+      from songs s
+      inner join artists a
+      on s.artist_id = a.id
+      where a.fem_level is not null
+      group by fem_level;
+    SQL
+    stats = ActiveRecord::Base.connection.select_all(sql)
+
     render json: stats
   end
 

@@ -4,7 +4,7 @@ Indie88.FemChartComponent = Ember.Component.extend
   didInsertElement: ->
     Ember.run.once this, 'update'
 
-  update: ->
+  update: (->
     data = this.get('data')
 
     w = 300
@@ -25,7 +25,7 @@ Indie88.FemChartComponent = Ember.Component.extend
       .outerRadius(r)
 
     pie = d3.layout.pie()
-      .value((d) -> d.value )
+      .value((d) -> d.count )
 
     arcs = vis.selectAll("g.slice")
       .data(pie)
@@ -44,7 +44,7 @@ Indie88.FemChartComponent = Ember.Component.extend
         d.outerRadius = r
         "translate(" + arc.centroid(d) + ")"
       .attr("text-anchor", "middle")
-      .text((d, i) -> data.artists[i].label )
-
+      .text((d, i) -> data.artists[i].fem_level ) # TODO labels
+  ).observes('data')
 
 
