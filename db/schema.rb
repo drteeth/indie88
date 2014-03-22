@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316180917) do
+ActiveRecord::Schema.define(version: 20140322222323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20140316180917) do
 
   add_index "artists", ["name"], name: "index_artists_on_name", using: :btree
 
+  create_table "fetch_jobs", force: true do |t|
+    t.date     "date",                              null: false
+    t.string   "status",       default: "enqueued", null: false
+    t.string   "last_message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "fetch_jobs", ["date"], name: "index_fetch_jobs_on_date", using: :btree
+  add_index "fetch_jobs", ["status"], name: "index_fetch_jobs_on_status", using: :btree
+
   create_table "songs", force: true do |t|
     t.string   "songuuid"
     t.string   "streamuuid"
@@ -37,8 +48,10 @@ ActiveRecord::Schema.define(version: 20140316180917) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "artist_id"
+    t.date     "date"
   end
 
   add_index "songs", ["artist_id"], name: "index_songs_on_artist_id", using: :btree
+  add_index "songs", ["date"], name: "index_songs_on_date", using: :btree
 
 end
