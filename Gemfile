@@ -25,6 +25,8 @@ group :development do
   gem 'capistrano-rvm'
 end
 
-# heroku
-gem 'thin'
-gem 'rails_12factor', group: :production
+gem 'puma'
+
+# # heroku
+# gem 'thin'
+# gem 'rails_12factor', group: :production
