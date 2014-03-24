@@ -15,8 +15,15 @@ gem 'ember-rails'
 gem 'ember-source', '~> 1.4.0'
 gem 'active_model_serializers', '~> 0.9.0.alpha'
 
-gem 'capistrano', group: :development
+# gem 'capistrano', group: :development
+gem 'capistrano', '~> 3.1.0'
 gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'capistrano-rails'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rvm'
+end
 
 # heroku
 gem 'thin'
