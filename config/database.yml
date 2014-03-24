@@ -13,5 +13,5 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: indie88_production
+  database: indie88
   pool: 5
