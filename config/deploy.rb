@@ -7,7 +7,7 @@ set :repo_url, 'git@github.com:drteeth/indie88.git'
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/sites/indie88'
+set :deploy_to, '/sites/indie88.monkeyhouse.ca'
 
 # Default value for :pty is false
 # set :pty, true
