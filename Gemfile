@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
 
-ruby '2.0.0'
+ruby '2.1.2'
 
-gem 'rails', '4.0.3'
+gem 'rails', '4.1.5'
 gem 'pg'
-gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'figaro'
 
@@ -17,7 +17,6 @@ gem 'active_model_serializers', '~> 0.9.0.alpha'
 
 # gem 'capistrano', group: :development
 gem 'capistrano', '~> 3.1.0'
-gem 'debugger', group: [:development, :test]
 
 group :development do
   gem 'capistrano-rails'
