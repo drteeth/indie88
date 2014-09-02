@@ -6,6 +6,10 @@ class Api::ArtistsController < ApplicationController
     respond_with artists
   end
 
+  def random
+    respond_with Artist.where(fem_level:nil).shuffle.first
+  end
+
   def show
     artist = Artist.find params[:id]
     respond_with artist
