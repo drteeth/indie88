@@ -1,6 +1,6 @@
 lock '3.1.0'
 
-set :application, 'indie88'
+set :application, 'indie88.indi'
 set :repo_url, 'git@github.com:drteeth/indie88.git'
 
 # Default branch is :master
@@ -11,6 +11,9 @@ set :deploy_to, '/sites/indie88.monkeyhouse.ca'
 
 # Default value for :pty is false
 # set :pty, true
+ set :ssh_options, {
+   forward_agent: true,
+ }
 
 # Default value for :linked_files is []
 set :linked_files, %w{config/application.yml}
