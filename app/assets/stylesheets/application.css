@@ -15,3 +15,35 @@
 .hidden {
   display: none;
 }
+
+.fem-level {
+  background-color: #efefef;
+  width: 400px;
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+
+.fem-level.selected,
+.fem-level:active {
+  border: 2px solid #444;
+}
+
+.fem-level img {
+  width: 400px;
+  height: 300px;
+}
+
+.fem-level .text {
+  display: block;
+}
+
+.next-artist {
+  opacity: 0.5;
+}
+
+.next-artist:hover {
+  opacity: 1;
+}
