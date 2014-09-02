@@ -12,14 +12,14 @@ class Importer
 
     puts "getting existing song dates"
     Song.transaction do
-      existing_songs = Song.where('date between ? and ?', debut, today).select('date').distinct.map(&:date)
+      existing_songs = Song.where('date between ? and ?', DEBUT, today).select('date').distinct.map(&:date)
       puts existing_songs
       dates = dates - existing_songs
     end
     puts "without existing songs", dates
 
     puts "getting existing job dates"
-    existing_jobs = FetchJob.where('date between ? and ?', debut, today).select('date').distinct.map(&:date)
+    existing_jobs = FetchJob.where('date between ? and ?', DEBUT, today).select('date').distinct.map(&:date)
 
     jobs_to_create = dates - existing_jobs
 
