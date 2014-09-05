@@ -9,6 +9,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'figaro'
+gem 'execjs'
 
 gem 'faraday'
 gem 'ember-rails'

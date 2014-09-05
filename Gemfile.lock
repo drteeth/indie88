@@ -159,6 +159,7 @@ DEPENDENCIES
   coffee-rails
   ember-rails
   ember-source (~> 1.4.0)
+  execjs
   faraday
   figaro
   jquery-rails
